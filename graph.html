@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>.a{
+text-align:center;
+color:#FF851B;
+}
+.column {
+  float: right;
+  width: 28%;
+  padding: 5px;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+<div class="a">
+<h1>Weakly-supervised Deep Embedding for
+Product Review Sentiment Analysis</h1>
+</div>
+<div style="float:right">
+<a href="{{url_for('review')}}"><button class="btn">Review Sentiment</button></a>
+<a href="{{url_for('signin')}}"><button class="btn">LOGOUT</button></a>
+</div>
+<div>
+<div><center>Word Count in Reviews</center>
+<center></center><img src={{url_for('static',filename=data)}} alt='word graph'></center>
+</div>
+</div>
+</body>
+</html>

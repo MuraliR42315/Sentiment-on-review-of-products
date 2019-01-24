@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	.a{
+text-align:center;
+color:#FF851B;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.column {
+  float: left;
+  width: 28%;
+  padding: 5px;
+}
+
+</style>
+</head>
+<body style="background-color:powderblue;">
+<div class="a">
+<h1>Weakly-supervised Deep Embedding for
+Product Review Sentiment Analysis</h1>
+</div>
+<div style="text-align:center"><h2>Products</h2></div>
+<div style="float:right">
+<a href="{{url_for('signin')}}"><button class="btn">LOGOUT</button></a>
+</div>
+<div class="card">
+<div class="column"> 
+		<img src="/static/mobile.jpg" alt="Mobile" style="width:250px ;height:150px"></img>
+  <h1>Mobile Phone</h1>
+  <p class="price">Rs 15,000/-</p>
+  <a href="{{url_for('mobile')}}"><button>More Details</button></a></div>
+  
+	<div class="column">
+  <img src="/static/Laptop.jpg" alt="Laptop" style="width:250px;height:150px"></img>
+  <h1>Laptop</h1>
+  <p class="price">Rs 35,000/-</p>
+  <a href="{{url_for('laptop')}}"><button>More Details</button></a></div>
+  <div class="column">  
+  <img src="/static/Camera.jpg" alt="Camera" style="width:250px; height:150px"></img>
+  <h1>Camera</h1>
+  <p class="price">Rs 20,000/-</p>
+  <a href="{{url_for('camera')}}"><button >More Details</button></a></div>
+
+</div>
+</body>
+</html>

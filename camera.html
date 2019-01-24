@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	.a{
+text-align:center;
+color:#FF851B;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.column {
+  float: left;
+  width: 28%;
+  padding: 5px;
+}
+
+</style>
+<style>
+.outer { font:normal 14px/18px 'latomedium', arial, sans-serif;
+position:relative;
+padding:50px 0 30px 0;
+width:30%;
+left:40%;
+background:#ddd;
+margin:0 0 50px 0;
+}
+.innera {
+overflow:auto;
+width:100%;
+height:300px;
+background:#ddd;
+}
+.outer table caption {
+position:absolute;
+width:99%;
+text-align:center;
+top:0;
+left:0;
+height:20px;
+background:#734279;
+border:1px solid #fff;
+color:#fff;
+}
+.outer thead tr {
+position:absolute;
+top:20px;
+height:20px;
+left:0;
+}
+.outer tfoot td {
+position:absolute;
+width:648px;
+text-align:center;
+background:#f0c992; 
+border:1px solid #000;
+color:#000;
+bottom:0;
+left:0
+}
+.outer th, .outer td {
+width:10em; 
+text-align:left;
+}
+.outer th {
+background:#724a10; 
+color:#fff;}
+.outer .dk {background:#fff;
+}
+
+.tableone {width:1050px; border-collapse:collapse; margin:0; font-family:'latomedium', arial, sans-serif;}
+.tabletwo {width:620px; border-collapse:collapse;}
+.th1 {width:149px;}
+.th2 {width:99px;}
+.th3 {width:99px;}
+.th4 {width:99px;}
+.th5 {width:200px;}
+
+.td1 {width:149px;}
+.td2 {width:99px;}
+.td3 {width:99px;}
+.td4 {width:99px;}
+.td5 {width:170px;}
+
+.tableone {background:#697210; border:1px solid #fff; color:#fff;}
+.tableone td {border:1px solid #fff; color:#fff; font-size:12px;}
+.tableone tbody {background:#f0c992; color:#000;}
+.tableone caption {background:#fff; color:#697210; font-size:13px; margin:0 auto;}
+.tabletwo td {background:#eee; color:#000;}
+.tableone th, .tabletwo th {text-align:left; font-size:13px;}
+.tabletwo tr.dk td {background:#ddd; color:#000;}
+
+.innerb {height:10em; overflow:auto;}
+</style>
+</head>
+<body style="background-color:powderblue;">
+<div class="a">
+<h1>Weakly-supervised Deep Embedding for
+Product Review Sentiment Analysis</h1>
+</div>
+<div class="outer">
+<div class="innera">
+<table summary="Dataset" border="1">
+	<caption>Camera Reviews</caption>
+    <thead>
+        <tr>
+        <td>SNo</td>
+        <td>Rating</td>
+		<td>Comment</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {# set value#}
+        {% for dict_item in data %}
+        {% for value in dict_item.values() %}
+            <td>{{value}}</td>
+        {# if show 3 columns, show next row #}
+        {% if loop.index0 % 3 == 2 %}
+        
+    </tr>
+    <tr>
+    {% endif %}
+    {% endfor %}
+    {%endfor%}
+    </tr>
+    </tbody>
+</table>
+</div></div>
+<div style="float:right">
+<a href="{{url_for('graph',type='camera')}}"><button>Sentiment Compute</button></a>
+<a href="{{url_for('signin')}}"><button>LOGOUT</button></a>
+<a href="{{url_for('back')}}"><button>Back</button></a>
+</div>
+</body>
+</html>

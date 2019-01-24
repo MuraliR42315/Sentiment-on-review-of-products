@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.a{
+text-align:center;
+color:#FF851B;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.form{
+max-width:500px;
+margin:auto
+}
+
+.form-state{
+	width: 300px;
+    margin: 0 auto;
+    height:150px;
+    
+	}
+	
+.text-p{
+	font-weight:bold;
+	text-align:center;
+	}
+
+</style>
+</head>
+<body style="background-color:powderblue;">
+<div class="a">
+<h1>Weakly-supervised Deep Embedding for
+Product Review Sentiment Analysis</h1>
+</div>
+<br><br><br><br>
+<div style="float:right">
+<a href="{{url_for('signin')}}"><button>LOGOUT</button></a>
+</div>
+<div class="text-p">
+Upload Test CSV file
+</div>
+<div class="form-state">
+<form action="http://localhost:5000/model" method='POST' enctype='multipart/form-data'>
+<br><br><br>
+<p><input type='file' name='csv_info' /> </p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='submit' class="btn" value='Upload File' />
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.a{
+text-align:center;
+color:#FF851B;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.form{
+max-width:500px;
+margin:auto
+}
+	.dat{
+	  display: block;
+  color: #717171;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+ font-family: 'HelveticaNeueLTStd-MdCn';
+	}
+</style>
+</head>
+<body style="background-color:powderblue;">
+<div class="a">
+<h1>Weakly-supervised Deep Embedding for
+Product Review Sentiment Analysis</h1>
+</div>
+<br><br><br><br>
+<div style="float:right">
+<a href="{{url_for('signin')}}"><button class="btn">LOGOUT</button></a>
+<a href="{{url_for('review')}}"><button class="btn">Back</button></a>
+</div>
+Result:
+<div class="outer">
+<div class="innera">
+<table summary="Dataset" border="1">
+	<caption>Camera Reviews</caption>
+    <thead>
+        <tr>
+        <td>Review</td>
+		<td>Sentiment</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {# set value#}
+        {% for dict_item in data %}
+        {% for value in dict_item.values() %}
+            <td>{{value}}</td>
+        {# if show 3 columns, show next row #}
+        {% if loop.index0 % 3 == 2 %}
+        
+    </tr>
+    <tr>
+    {% endif %}
+    {% endfor %}
+    {%endfor%}
+    </tr>
+    </tbody>
+</table>
+</div></div>
+<div class="dat" align="center">
+			<p> Count : {{data|length}}</p>
+            <p> Positive Count : {{cp}}</p>   
+            <p> Negative Count : {{cn}}</p>
+</div>
+</body>
+</html>
